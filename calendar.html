@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Floral Calendar with Plant Care</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .calendar-container {
+            max-height: 70vh;
+            overflow-y: scroll;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 95vw;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Flexbox to arrange calendar and table side by side */
+        .calendar-and-care {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        /* Both sections should have equal width */
+        .month, .plant-care {
+            width: 48%; /* Set equal width */
+        }
+
+        .month {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .month h2 {
+            font-family: 'Cursive', sans-serif;
+            color: #4CAF50;
+            margin: 0;
+            padding: 15px 0;
+            font-size: 2em;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .days div {
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .day-header {
+            font-weight: bold;
+            color: #4CAF50;
+            background-color: #f1f1f1;
+        }
+
+        .day-number {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .today {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        /* Smaller circles for watering, pruning, and fertilizing */
+        .pruning, .watering, .fertilizing {
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px; /* Reduced circle size */
+            height: 35px;
+            margin: 0 auto;
+            position: relative;
+            font-size: 14px; /* Smaller font inside circles */
+        }
+
+        .pruning {
+            background-color: #4CAF50; /* Green for pruning */
+        }
+
+        .watering {
+            background-color: #2196F3; /* Blue for watering */
+        }
+
+        .fertilizing {
+            background-color: #F44336; /* Red for fertilizing */
+        }
+
+        /* Tooltip styling */
+        .pruning:hover::after, .watering:hover::after, .fertilizing:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 12px;
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .plant-care {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .plant-care h3 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .plant-care table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .plant-care th, .plant-care td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .plant-care th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .plant-care td {
+            background-color: #f9f9f9;
+        }
+
+        .calendar-container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .calendar-container::-webkit-scrollbar-thumb {
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        .calendar-container::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-background">
+    <video autoplay loop muted>
+        <source src="C:\My Web Sites\MyProject\urabansprouts\green pink floral illustation welcome intro video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Flex container for calendar and table -->
+<div class="calendar-container">
+    <div class="calendar-and-care">
+        <!-- October Month Section -->
+        <div class="month">
+            <h2>October 2024</h2>
+            <div class="days">
+                <div class="day-header">Sun</div>
+                <div class="day-header">Mon</div>
+                <div class="day-header">Tue</div>
+                <div class="day-header">Wed</div>
+                <div class="day-header">Thu</div>
+                <div class="day-header">Fri</div>
+                <div class="day-header">Sat</div>
+                <div></div> <!-- Blank space for days before Oct 1 -->
+                <div class="day-number watering" title="Watering">1</div>
+                <div class="day-number">2</div>
+                <div class="day-number">3</div>
+                <div class="day-number pruning" title="Pruning">4</div>
+                <div class="day-number">5</div>
+                <div class="day-number fertilizing" title="Fertilizing">6</div>
+                <div class="day-number">7</div>
+                <div class="day-number watering" title="Watering">8</div>
+                <div class="day-number">9</div>
+                <div class="day-number pruning" title="Pruning">10</div>
+                <div class="day-number">11</div>
+                <div class="day-number fertilizing" title="Fertilizing">12</div>
+                <div class="day-number">13</div>
+                <div class="day-number watering" title="Watering">14</div>
+                <div class="day-number">15</div>
+                <div class="day-number pruning" title="Pruning">16</div>
+                <div class="day-number">17</div>
+                <div class="day-number fertilizing" title="Fertilizing">18</div>
+                <div class="day-number">19</div>
+                <div class="day-number watering" title="Watering">20</div>
+                <div class="day-number">21</div>
+                <div class="day-number pruning" title="Pruning">22</div>
+                <div class="day-number">23</div>
+                <div class="day-number fertilizing" title="Fertilizing">24</div>
+                <div class="day-number">25</div>
+                <div class="day-number watering" title="Watering">26</div>
+                <div class="day-number">27</div>
+                <div class="day-number pruning" title="Pruning">28</div>
+                <div class="day-number">29</div>
+                <div class="day-number fertilizing" title="Fertilizing">30</div>
+                <div class="day-number">31</div>
+            </div>
+        </div>
+
+        <!-- Plant Care Schedule Section -->
+        <div class="plant-care">
+            <h3>Plant Care Schedule</h3>
+            <table>
+                <tr>
+                    <th>Plant</th>
+                    <th>Watering</th>
+                    <th>Pruning</th>
+                    <th>Fertilizing</th>
+                </tr>
+                <tr>
+                    <td>Rose</td>
+                    <td>Every 3 days</td>
+                    <td>Once a month</td>
+                    <td>Twice a month</td>
+                </tr>
+                <tr>
+                    <td>Fern</td>
+                    <td>Every 2 days</td>
+                    <td>Twice a month</td>
+                    <td>Once a month</td>
+                </tr>
+                <tr>
+                    <td>Orchid</td>
+                    <td>Every 7 days</td>
+                    <td>Once a month</td>
+                    <td>Every 3 months</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

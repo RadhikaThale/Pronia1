@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanSprouts - Plant Care</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header with camera icon */
+        .header {
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            position: relative;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .camera {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .camera img {
+            width: 40px;
+            cursor: pointer;
+        }
+
+        /* Logo section */
+        .logo {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Form section styling */
+        .form-section, .book-service-section {
+            margin: 30px auto;
+            width: 60%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-section label, .book-service-section label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-section input, .form-section textarea, .book-service-section input, .book-service-section select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-section input[type="submit"], .book-service-section input[type="submit"] {
+            width: auto;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .form-section input[type="submit"]:hover, .book-service-section input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Book service section */
+        .book-service-section h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Camera Icon -->
+    <div class="header">
+        UrbanSprouts - Plant Care
+        <div class="camera">
+            <img src="clogo.png" alt="Camera Icon" title="Capture with Camera">
+        </div>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo">
+        <img src="urban_sprouts.png" alt="UrbanSprouts Logo">
+    </div>
+
+    <!-- New Form Section -->
+    <div class="form-section">
+        <h2>Enter Your Location and Climate Details</h2>
+        <form action="submit_climate_data" method="POST">
+            <label for="location">Enter your local location:</label>
+            <input type="text" id="location" name="location" placeholder="e.g., Mumbai" required>
+
+            <label for="home_climate">Describe climatic variations at your home:</label>
+            <textarea id="home_climate" name="home_climate" placeholder="e.g., Humid, Warm, etc." rows="4" cols="50" required></textarea>
+
+            <label for="shop_climate">Describe climatic variations at your shop:</label>
+            <textarea id="shop_climate" name="shop_climate" placeholder="e.g., Dry, Cooler, etc." rows="4" cols="50" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Book Your Service Section -->
+    <div class="book-service-section">
+        <h2>Book Your Service</h2>
+        <form action="book_service" method="POST">
+            <label for="service_type">Select Service Type:</label>
+            <select id="service_type" name="service_type">
+                <option value="fertilizer_service">Guidance</option>
+                <option value="balcony_decorator">Balcony Decorator</option>
+                <option value="ideas_for_you">Ideas for You</option>
+                <option value="suggestions">Suggestions</option>
+            </select>
+
+            <label for="date">Select Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Select Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <input type="submit" value="Book Now">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 UrbanSprouts. All rights reserved.
+    </footer>
+
+</body>
+</html>

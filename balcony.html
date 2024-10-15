@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balcony Measurement for Plant Care</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .contact-info {
+            background-color: #a3d281;
+            padding: 30px;
+            border-radius: 8px 0 0 8px;
+            color: white;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contact-info h2 {
+            margin-bottom: 15px;
+        }
+        .contact-info p {
+            margin: 10px 0;
+        }
+        .contact-info .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .contact-info .info-item img {
+            margin-right: 10px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        .form-group input[type="file"] {
+            margin-left: 0;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #a3d281;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #88b563;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Contact Information Section -->
+    <div class="contact-info">
+        <h2>Contact Info</h2>
+        <p>Fill out the form and we will get back to you within 24 hours.</p>
+        <div class="info-item">
+            <img src="call.png" alt="Phone" width="24" height="24">
+            <p>123 456 789</p>
+        </div>
+        <div class="info-item">
+            <img src="message.jpeg" alt="Email" width="24" height="24">
+            <p>info@example.com</p>
+        </div>
+        <div class="info-item">
+            <img src="location.jpeg" alt="Location" width="24" height="24">
+            <p>13, Your Address, Here</p>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h2>Balcony Measurement Form</h2>
+        <form>
+            <!-- Name Section -->
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+            </div>
+
+            <!-- Balcony Measurements -->
+            <div class="form-group">
+                <label for="length">Balcony Length (m):</label>
+                <input type="number" id="length" name="length" placeholder="Enter balcony length" required>
+            </div>
+            <div class="form-group">
+                <label for="width">Balcony Width (m):</label>
+                <input type="number" id="width" name="width" placeholder="Enter balcony width" required>
+            </div>
+
+            <!-- Media Upload -->
+            <div class="form-group">
+                <label for="camera">Take a photo of your balcony:</label>
+                <input type="file" id="camera" name="camera" accept="image/*" capture="camera">
+            </div>
+            <div class="form-group">
+                <label for="scanner">Upload a scanned document:</label>
+                <input type="file" id="scanner" name="scanner" accept="image/*,application/pdf" capture="scanner">
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Message Section -->
+            <div class="form-group">
+                <label for="message">Your Suggestions:</label>
+                <textarea id="message" name="message" placeholder="Enter your message" rows="4"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
